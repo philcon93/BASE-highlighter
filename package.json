@@ -1,0 +1,22 @@
+{
+  "name": "base-syntax-highlighting",
+  "version": "1.0.0",
+  "description": "Using [Rainbow](https://craig.is/making/rainbows)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philcon93/BASE-syntax-highlighting.git"
+  },
+  "author": "phil connah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philcon93/BASE-syntax-highlighting/issues"
+  },
+  "homepage": "https://github.com/philcon93/BASE-syntax-highlighting#readme",
+  "dependencies": {
+    "rainbow-code": "^2.1.2"
+  }
+}

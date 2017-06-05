@@ -3,30 +3,83 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>BASE-syntax-highlighting</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all">
-        <link rel="stylesheet" type="text/css" href="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/css/custom-theme/jquery-ui-1.8.18.custom.css" media="all">        
+        <link rel="stylesheet" type="text/css" href="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/css/custom-theme/jquery-ui-1.8.18.custom.css" media="all">
+		<link rel="stylesheet" type="text/css" href="node_modules/rainbow-code/themes/css/obsidian.css" media="all">
         <!--[if lte IE 8]>
             <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/html5shiv/3.7.0/html5shiv.js"></script>
             <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+		<style>
+		.close{
+			float: none;
+			font-size: inherit;
+			font-weight: normal;
+			text-shadow: none;
+			opacity: 1;
+		}
+		</style>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <p>Hello world! This is HTML5 Boilerplate.</p>
+                <div class="col-xs-8 col-xs-offset-2">
+					<h1 class="text-center">BASE-syntax-highlighting</h1>
+					<pre><code data-language="base">
+[&percnt;thumb_list type:&#39;products&#39; filter_category:&#39;&#39; limit:&#39;10&#39;&percnt;]
+	[&percnt;param template&percnt;]
+    	[&percnt;if [&#64;name&#64;] eq &#39;Shirts&#39;&percnt;]
+        	shirt_template
+    	[&percnt;else&percnt;]
+        	default
+    	[&percnt;/if&percnt;]
+	[&percnt;/param&percnt;]
+[&percnt;/thumb_list&percnt;]
+
+[%thumb_list type:'products' filter_category:'' limit:'10'%]
+	[%param template%]
+    	[%if [@name@] eq 'Shirts'%]
+        	shirt_template
+    	[%else%]
+        	default
+    	[%/if%]
+	[%/param%]
+[%/thumb_list%]
+					</code></pre>
+				<pre><code data-language="html">
+&lt;div class="container"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-xs-12"&gt;
+			&lt;p&gt;Hey there&lt;/p&gt;
+			&lt;img src="#"/&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<p>Hey there</p>
+			<img src="#"/>
+		</div>
+	</div>
+</div>
+				</code></pre>
                 </div>
             </div>
         </div>
         <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/bootstrap/3.3.6/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/js/jquery-ui-1.8.18.custom.min.js"></script>
-        <script type="text/javascript" src="rainbow-custom.min.js"></script>
+        <script type="text/javascript" src="node_modules/rainbow-code/dist/rainbow.min.js"></script>
+		<script type="text/javascript" src="node_modules/rainbow-code/src/language/generic.js"></script>
+		<script type="text/javascript" src="node_modules/rainbow-code/src/language/html.js"></script>
+		<script type="text/javascript" src="base.js"></script>
     </body>
 </html>
