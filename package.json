@@ -18,5 +18,8 @@
   "homepage": "https://github.com/philcon93/BASE-syntax-highlighting#readme",
   "dependencies": {
     "rainbow-code": "^2.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
   }
 }
