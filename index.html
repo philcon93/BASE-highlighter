@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>BASE-syntax-highlighting</title>
+        <title>BASE Syntax Highlighting</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -23,14 +23,37 @@
 			font-weight: normal;
 			text-shadow: none;
 			opacity: 1;
+			color: inherit;
+		}
+		.close:hover, .close:focus{
+			color: inherit;
+			cursor: inherit;
+			opacity: 1;
+		}
+		pre .function{
+			color: #39d3b0;
+		}
+		pre .function.tag-name{
+			color: #47bfee;
+		}
+		pre .function.parameter.value{
+			color: #ffc907;
+		}
+		pre .function.parameter.star{
+			color: #ffc907;
+		}
+		pre .data{
+			color: #ef4a7e;
 		}
 		</style>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-xs-8 col-xs-offset-2">
+				<div class="col-xs-12">
 					<h1 class="text-center">BASE-syntax-highlighting</h1>
+				</div>
+                <div class="col-xs-12 col-md-6">
 					<pre><code data-language="base">
 [&percnt;thumb_list type:&#39;products&#39; filter_category:&#39;&#39; limit:&#39;10&#39;&percnt;]
 	[&percnt;param template&percnt;]
@@ -42,34 +65,36 @@
 	[&percnt;/param&percnt;]
 [&percnt;/thumb_list&percnt;]
 
-[%thumb_list type:'products' filter_category:'' limit:'10'%]
-	[%param template%]
-    	[%if [@name@] eq 'Shirts'%]
-        	shirt_template
-    	[%else%]
-        	default
-    	[%/if%]
-	[%/param%]
-[%/thumb_list%]
+<ul>
+    [%paging limit:'3'%]
+        [%param *previous_page%]
+            <li><a href="[@URL@]">Previous Page</a></li>
+        [%/param%]
+        [%param *goback_pages%]
+            <li><a href="[@URL@]">[@page@]</a></li>
+        [%/param%]
+        [%param *current_page%]
+            <li class="active"><a href="[@URL@]">[@page@]</a></li>
+        [%/param%]
+        [%param *gonext_pages%]
+            <li><a href="[@URL@]">[@page@]</a></li>
+        [%/param%]
+        [%param *next_page%]
+            <li><a href="[@URL@]">Next Page</a></li>
+        [%/param%]
+    [%/paging%]
+</ul>
 					</code></pre>
-				<pre><code data-language="html">
-&lt;div class="container"&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-xs-12"&gt;
-			&lt;p&gt;Hey there&lt;/p&gt;
-			&lt;img src="#"/&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+				</div>
+				<div class="col-xs-12 col-md-6">
+				<pre><code data-language="base">
+[%calc [@grand_total@] - [@sub_total@] + 10 * 2 /%]
 
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<p>Hey there</p>
-			<img src="#"/>
-		</div>
-	</div>
-</div>
+[%product sku:'product-sku'%]
+    [%param *body%]
+        <p>[@sku@] [@model@]</p>
+    [%/param%]
+[%/product%]
 				</code></pre>
                 </div>
             </div>
