@@ -1,108 +1,106 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>BASE Syntax Highlighting</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all">
-        <link rel="stylesheet" type="text/css" href="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/css/custom-theme/jquery-ui-1.8.18.custom.css" media="all">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>BASE Syntax Highlighting</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="all">
+		<link rel="stylesheet" type="text/css" href="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/css/custom-theme/jquery-ui-1.8.18.custom.css" media="all">
 		<link rel="stylesheet" type="text/css" href="rainbow/obsidian.css" media="all">
-        <!--[if lte IE 8]>
-            <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/html5shiv/3.7.0/html5shiv.js"></script>
-            <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+		<!--[if lte IE 8]>
+		<script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/html5shiv/3.7.0/html5shiv.js"></script>
+		<script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
 		<style>
-		.close{
-			float: none;
-			font-size: inherit;
-			font-weight: normal;
-			text-shadow: none;
-			opacity: 1;
-			color: inherit;
-		}
-		.close:hover, .close:focus{
-			color: inherit;
-			cursor: inherit;
-			opacity: 1;
-		}
-		pre .function{
-			color: #39d3b0;
-		}
-		pre .function.tag-name{
-			color: #47bfee;
-		}
-		pre .function.parameter.value{
-			color: #ffc907;
-		}
-		pre .function.parameter.star{
-			color: #ffc907;
-		}
-		pre .data{
-			color: #ef4a7e;
-		}
+			.close{
+				float: none;
+				font-size: inherit;
+				font-weight: normal;
+				text-shadow: none;
+				opacity: 1;
+				color: inherit;
+			}
+			.close:hover, .close:focus{
+				color: inherit;
+				cursor: inherit;
+				opacity: 1;
+			}
+			pre .function{
+				color: #39d3b0;
+			}
+			pre .function.tag-name{
+				color: #47bfee;
+			}
+			pre .function.parameter.value{
+				color: #ffc907;
+			}
+			pre .function.parameter.star{
+				color: #ffc907;
+			}
+			pre .data{
+				color: #ef4a7e;
+			}
 		</style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-				<div class="col-xs-12">
-					<h1 class="text-center">BASE-syntax-highlighting</h1>
-				</div>
-                <div class="col-xs-12 col-md-6">
-					<pre><code data-language="base">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center">BASE-syntax-highlighting</h1>
+			</div>
+			<div class="col-xs-12 col-md-6">
+<pre><code data-language="base">
 [&percnt;thumb_list type:&#39;products&#39; filter_category:&#39;&#39; limit:&#39;10&#39;&percnt;]
 	[&percnt;param template&percnt;]
-    	[&percnt;if [&#64;name&#64;] eq &#39;Shirts&#39;&percnt;]
-        	shirt_template
-    	[&percnt;else&percnt;]
-        	default
-    	[&percnt;/if&percnt;]
+		[&percnt;if [&#64;name&#64;] eq &#39;Shirts&#39;&percnt;]
+		shirt_template
+		[&percnt;else&percnt;]
+		default
+		[&percnt;/if&percnt;]
 	[&percnt;/param&percnt;]
 [&percnt;/thumb_list&percnt;]
-
 <ul>
-    [%paging limit:'3'%]
-        [%param *previous_page%]
-            <li><a href="[@URL@]">Previous Page</a></li>
-        [%/param%]
-        [%param *goback_pages%]
-            <li><a href="[@URL@]">[@page@]</a></li>
-        [%/param%]
-        [%param *current_page%]
-            <li class="active"><a href="[@URL@]">[@page@]</a></li>
-        [%/param%]
-        [%param *gonext_pages%]
-            <li><a href="[@URL@]">[@page@]</a></li>
-        [%/param%]
-        [%param *next_page%]
-            <li><a href="[@URL@]">Next Page</a></li>
-        [%/param%]
-    [%/paging%]
+[%paging limit:'3'%]
+[%param *previous_page%]
+<li><a href="[@URL@]">Previous Page</a></li>
+[%/param%]
+[%param *goback_pages%]
+<li><a href="[@URL@]">[@page@]</a></li>
+[%/param%]
+[%param *current_page%]
+<li class="active"><a href="[@URL@]">[@page@]</a></li>
+[%/param%]
+[%param *gonext_pages%]
+<li><a href="[@URL@]">[@page@]</a></li>
+[%/param%]
+[%param *next_page%]
+<li><a href="[@URL@]">Next Page</a></li>
+[%/param%]
+[%/paging%]
 </ul>
-					</code></pre>
-				</div>
-				<div class="col-xs-12 col-md-6">
-				<pre><code data-language="base">
+</code></pre>
+			</div>
+			<div class="col-xs-12 col-md-6">
+<pre><code data-language="base">
 [%calc [@grand_total@] - [@sub_total@] + 10 * 2 /%]
 
 [%product sku:'product-sku'%]
-    [%param *body%]
-        <p>[@sku@] [@model@]</p>
-    [%/param%]
+[%param *body%]
+<p>[@sku@] [@model@]</p>
+[%/param%]
 [%/product%]
-				</code></pre>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/bootstrap/3.3.6/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/js/jquery-ui-1.8.18.custom.min.js"></script>
-        <script type="text/javascript" src="rainbow/rainbow.min.js"></script>
-		<script type="text/javascript" src="base.js"></script>
-    </body>
+</code></pre>
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/bootstrap/3.3.6/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdn.neto.com.au/assets/neto-cdn/jquery_ui/1.11.1/js/jquery-ui-1.8.18.custom.min.js"></script>
+		<script type="text/javascript" src="rainbow/rainbow.min.js"></script>
+		<script type="text/javascript" src="rainbow/base.js"></script>
+	</body>
 </html>
