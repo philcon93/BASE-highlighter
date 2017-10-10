@@ -1,0 +1,78 @@
+@import "/_obisdian.less";
+
+code{
+	color: #eee;
+	background-color: #22282a;
+	padding: 1px 4px;
+	.close{
+		float: none;
+		font-size: inherit;
+		font-weight: normal;
+		text-shadow: none;
+		opacity: 1;
+		color: inherit;
+		&:hover, &:focus{
+			color: inherit;
+			cursor: inherit;
+			opacity: 1;
+		}
+	}
+}
+pre{
+	.function{
+		color: #eee;
+		&.tag-name{
+			color: #E26B73;
+		}
+		&.parameter{
+			&.value{
+				color: #97C475;
+			}
+			&.star{
+				color: #D29B62;
+			}
+		}
+		&.key{
+			color: #D29B62;
+		}
+	}
+	.support{
+		color: #eee;
+		&.tag, &.special{
+			color: #eee;
+		}
+		&.tag-name{
+			color: #E26B73;
+		}
+		&.attribute{
+			color: #D29B62;
+		}
+	}
+	.string{
+		&.quote{
+			color: #65d465;
+		}
+	}
+	.entity{
+		&.tag.script{
+			color: #E26B73;
+			&.attribute{
+				color: #eee
+			}
+		}
+	}
+	.data{
+		color: #eee;
+		&.value{
+			color: #E26B73;
+		}
+	}
+	code{
+		&[data-language=base]{
+			display: none;
+		}
+		&.rainbow{
+			display: block;
+		}
+	}
+}
