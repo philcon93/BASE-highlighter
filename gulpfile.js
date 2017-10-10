@@ -4,18 +4,18 @@ var path = require('path');
 var fs = require('fs');
 
 gulp.task('less', function () {
-	fs.stat('./src/css/app.less', function(err, stat) {
+	fs.stat('./src/less/app.less', function(err, stat) {
 		if(err != null) {
 			console.log('Error:' + err.code);
 		}
 	});
-	gulp.src('./src/css/app.less')
+	gulp.src('./src/less/app.less')
 	.pipe(less({
 		paths: [ path.join(__dirname, 'less', 'includes') ]
 	}))
-	.pipe(gulp.dest('./dist/app.css'));
+	.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', function () {
-	gulp.watch('./src/css/*.less', ['less']);
+	gulp.watch('./src/less/*.less', ['less']);
 });
