@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>BASE Syntax Highlighting</title>
+		<title>BASE Highlighter</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -18,37 +18,37 @@
 		<div class="container">
 			<div class="row">
 			<div class="col-xs-12">
-				<h1 class="text-center">BASE-syntax-highlighting</h1>
+				<h1 class="text-center">BASE Highlighter</h1>
 			</div>
 			<div class="col-xs-12 col-md-6">
 <pre><code data-language="base">
 [&percnt;thumb_list type:&#39;products&#39; filter_category:&#39;&#39; limit:&#39;10&#39;&percnt;]
 	[&percnt;param template&percnt;]
-		[&percnt;if [&#64;name&#64;] eq &#39;Shirts&#39;&percnt;]
-		shirt_template
-		[&percnt;else&percnt;]
-		default
-		[&percnt;/if&percnt;]
+	[&percnt;if [&#64;name&#64;] eq &#39;Shirts&#39;&percnt;]
+	shirt_template
+	[&percnt;else&percnt;]
+	default
+	[&percnt;/if&percnt;]
 	[&percnt;/param&percnt;]
 [&percnt;/thumb_list&percnt;]
 <ul>
-[%paging limit:'3'%]
-[%param *previous_page%]
-<li><a href="[@URL@]">Previous Page</a></li>
-[%/param%]
-[%param *goback_pages%]
-<li><a href="[@URL@]">[@page@]</a></li>
-[%/param%]
-[%param *current_page%]
-<li class="active"><a href="[@URL@]">[@page@]</a></li>
-[%/param%]
-[%param *gonext_pages%]
-<li><a href="[@URL@]">[@page@]</a></li>
-[%/param%]
-[%param *next_page%]
-<li><a href="[@URL@]">Next Page</a></li>
-[%/param%]
-[%/paging%]
+	[%paging limit:'3'%]
+	[%param *previous_page%]
+	<li><a href="[@URL@]">Previous Page</a></li>
+	[%/param%]
+	[%param *goback_pages%]
+	<li><a href="[@URL@]">[@page@]</a></li>
+	[%/param%]
+	[%param *current_page%]
+	<li class="active"><a href="[@URL@]">[@page@]</a></li>
+	[%/param%]
+	[%param *gonext_pages%]
+	<li><a href="[@URL@]">[@page@]</a></li>
+	[%/param%]
+	[%param *next_page%]
+	<li><a href="[@URL@]">Next Page</a></li>
+	[%/param%]
+	[%/paging%]
 </ul>
 </code></pre>
 			</div>
@@ -57,10 +57,45 @@
 [%calc [@grand_total@] - [@sub_total@] + 10 * 2 /%]
 
 [%product sku:'product-sku'%]
-[%param *body%]
-<p>[@sku@] [@model@]</p>
-[%/param%]
+	[%param *body%]
+	<p>[@sku@] [@model@]</p>
+	[%/param%]
 [%/product%]
+</code></pre>
+			</div>
+			<div class="col-xs-12">
+<pre><code data-language="base">
+&lt;div class="row-padded"&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label&gt;
+            &lt;input name="regoptin" type="checkbox" value="Y" data-message="You can unsubscribe at any time."/&gt;
+            Subscribe to our newsletter and we'll keep you up to date on our products and services.
+        &lt;/label&gt;
+    &lt;/div&gt;
+    [&percnt;set [&commat;wholesale_terms&commat;] &percnt;][&percnt;content_zone id:'wholesale_terms' /&percnt;][&percnt;/set&percnt;]
+    &lt;div class="checkbox"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="agree" value="y" class="terms_box" required/&gt;
+            I have read and agree to
+            &lt;a href="#" data-toggle="modal" data-target="#termsModal"&gt;Terms &amp; Conditions&lt;/a&gt;[&percnt;if [&commat;wholesale_terms&commat;] ne ''&percnt;], our &lt;a href="#" data-toggle="modal" data-target="#tradeModal"&gt;Terms of Trade&lt;/a&gt;[&percnt;/if&percnt;]&nbsp;and
+            &lt;a href="#" data-toggle="modal" data-target="#privacyModal"&gt;Privacy Policy&lt;/a&gt;.
+        &lt;/label&gt;
+    &lt;/div&gt;
+    [&percnt;if [&commat;wholesale_terms&commat;] ne ''&percnt;]
+    &lt;div class="modal fade" id="tradeModal"&gt;
+        &lt;div class="modal-dialog"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button&gt;
+                    &lt;h4 class="modal-title"&gt;Terms of Trade&lt;/h4&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;[&percnt;content_zone id:'wholesale_terms'/&percnt;]&lt;/div&gt;
+                &lt;div class="modal-footer"&gt;&lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    [&percnt;/if&percnt;]
+&lt;/div&gt;
 </code></pre>
 			</div>
 			</div>
