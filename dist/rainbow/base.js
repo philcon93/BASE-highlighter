@@ -14,7 +14,7 @@ Rainbow.extend('html', [{
 	{
 		// First word in function
 		matches: {
-			1: 'function.tag',
+			1: 'function.tag.open',
 			2: 'function.tag-name'
 		},
 		pattern: /(\[&percnt;\??|\[%\??)(\w+)/gi
@@ -29,22 +29,26 @@ Rainbow.extend('html', [{
 		pattern: /(\[&percnt;\/|\[%\/)(\w+)(\/?\??&percnt;]|\/?\??%])/gi
 	},
 	{
-		// Functions parameters attributes keys
+		// Functions parameters attributes keys and value
 		matches: {
 			1: 'function.parameter.key',
-			2: 'function.parameter.operator'
+			2: 'function.parameter.operator',
+			3: 'string.quote',
+			4: 'function.parameter.value',
+			5: 'string.quote'
 		},
-		pattern: /([a-z_]+)(?:\:)/gi
+		pattern: /([a-z_]+)(:)(&#39;|'|")(.*?)(\3)/gi
 	},
-	{
-		// Functions attributes values
-		matches: {
-			1: 'string.quote',
-			2: 'function.parameter.value',
-			3: 'string.quote'
-		},
-		pattern: /(\:\&#39;|"|')([\s\S]*?)(\&#39;|"|')/g
-	},
+	// {
+	// 	// Functions attributes values
+	// 	matches: {
+	// 		1: 'support.operator',
+	// 		2: 'string.quote',
+	// 		3: 'function.parameter.value',
+	// 		4: 'string.quote'
+	// 	},
+	// 	pattern: /(:)(&#39;|'|")(.*?)(\2)/g
+	// },
 	{
 		// Functions * parameters attributes
 		matches: {
