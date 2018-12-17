@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "gh-pages": "node index",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,8 +22,8 @@
     "rainbow-code": "^2.1.2"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "gulp": "3.9.0",
-    "gulp-less": "3.0.3"
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.0",
+    "gulp-less": "^4.0.1"
   }
 }
